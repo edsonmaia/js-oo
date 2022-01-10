@@ -1,6 +1,4 @@
 import { Pessoa } from '../models/Pessoa.js'
-//import { ListaPessoas } from '../models/ListaPessoas.js'
-//import { PessoasView } from '../views/PessoasView.js'
 
 export class PessoaController {
     
@@ -18,12 +16,6 @@ export class PessoaController {
         this._inputIdade  = document.querySelector('#idade')
         this._inputPeso   = document.querySelector('#peso')
         this._inputAltura = document.querySelector('#altura')
-
-        // criar lista de pessoas
-        //this._listaPessoas = new ListaPessoas()
-        
-        //this._pessoasView = new PessoasView(document.querySelector('#dados'))
-        //this._pessoasView.update(this._listaPessoas)
     }
 
     // adicionar pessoa
@@ -34,12 +26,6 @@ export class PessoaController {
         // criar uma pessoa
         this._criaPessoa()
         console.log(this._criaPessoa())
-
-        // adicionar nova pessoa na lista
-        //this._listaPessoas.adiciona(this._criaPessoa())
-        //console.log(this._listaPessoas.pessoas)
-
-        //this._pessoasView.update(this._listaPessoas)
 
     }
     
