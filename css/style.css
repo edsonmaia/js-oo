@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&display=swap');
+
+/* Seletor Global */
+* {
+    margin: 0; /* margem */
+    padding: 0; /* espacamento */
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+}
+
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    background: radial-gradient(circle, #3f51b5, #1a237e);
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+}
+
+section {
+    width: 800px;
+    background: #fff;
+    padding: 0 1.5rem;
+    /* border-radius: 8px; */
+    box-shadow: 0 0 3px #fff;
+}
+
+h1 {
+    margin: 0.5rem;
+    font-size: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+h1::before {
+    content: " ";
+    position: absolute;
+    width: 25px;
+    height: 5px;
+    bottom: 3px;
+    background: linear-gradient(45deg, #9fa8da, #1a237e);
+}
+
+/* formatar formulario */
+form {
+    width: 100%;
+}
+
+label {
+    display: block; /* none */
+}
+
+input {
+    outline: none;
+    margin: 0.5rem 0 1rem 0;
+    padding: 0.75rem;
+    position: relative;
+
+    width: 100%;
+    border: 1px solid #ececec;
+    border-radius: 5px;
+}
+
+input:focus {
+    border-bottom: 2px solid #1a237e;
+}
+
+/* PLACEHOLDER */
+input::-webkit-input-placeholder {
+    font-size: 0.65rem;
+}
+
+input::placeholder, input::-moz-placeholder {
+    font-size: 0.65rem;
+}
+
+input:focus::-webkit-input-placeholder {
+    transform: translate(-0.2px, -20px);
+    transition: transform 0.5s ease;
+}
+/* input::-moz-placeholder:focus */
+input::placeholder:focus {
+    transform: translate(-0.2px, -20px);
+    transition: transform 0.5s ease;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.colunas2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.detalhes {
+    color: red;
+}
+
+/* Botao */
+
+#btnCalcular {
+    font-size: 1rem;
+    background: #3f51b5;
+    color: #fff;
+    padding: 10px;
+    margin-top: 0.625rem;
+    border: 0;
+    box-shadow: 0px 0px 1px #888;
+    border-radius: 5px;
+}
+
+#btnCalcular:hover {
+    cursor: pointer;
+    background: #1a237e;
+    transition: background 0.5s ease;
+}
+
+#dados {
+    margin: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ececec;
+}
+
+th {
+    background: #8c9eff;
+}
+
+th, tr, td {
+    border: 1px solid #ececec;
+    height: 2rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+    section {
+        width: 100%;
+    }   
+}
