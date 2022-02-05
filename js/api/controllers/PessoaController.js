@@ -101,14 +101,20 @@ export class PessoaController {
     }
 
     apaga(id) {
+        console.log('id a ser apagado ' + id)
+        if(!id) {
+            console.log('ID não foi informado')
+            return
+        }
         // se tem id pode apagar o registro
-        if(id) {
+        //if(id) {
+            console.log('ID ' + id)
             this._listaPessoas.remove(id) // remove da view
             this._pessoasView.update(this._listaPessoas) // atualizar a view
         
             this._pessoasRepository.apagar(id) // remove do repository
             console.log('PessoaController Apagou')
-        }
+        //}
     }
 
     atualiza(id) {

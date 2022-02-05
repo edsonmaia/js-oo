@@ -1,4 +1,5 @@
 import { PessoaController } from './api/controllers/PessoaController.js'
+import { ModalHelper } from './api/helpers/ModalHelper.js'
 
 const pessoaController = new PessoaController()
 
@@ -34,13 +35,14 @@ btnApagar.addEventListener('click', () => {
     document.querySelector('#id').value = null
 
     ////// INTERACOES COM A JANELA MODAL //////
-    // abrir janela modal
-    openModal(`Deseja apagar o registro ${id} ?`)
+    // abrir janela modal - titulo, mensagem
+    ModalHelper.openModal('Apagar registro', `Deseja apagar o registro ${id} ?`)
 
     // se cliar no botao sim
     document.querySelector('#sim').addEventListener('click', () => {
         pessoaController.apaga(id)
-        closeModal()
+        id = null // apagar o id IMPORTANTE!!!
+        ModalHelper.closeModal()
         
     })
     ////// INTERACOES COM A JANELA MODAL //////
@@ -48,7 +50,7 @@ btnApagar.addEventListener('click', () => {
 })
 
 btnEditar.addEventListener('click', () => {
-    console.log('Editar')
+    //console.log('Editar')
 
     // rolar pagina para cima
     window.scrollTo({
@@ -60,7 +62,6 @@ btnEditar.addEventListener('click', () => {
     document.querySelector('#nome').focus()
 
     let id = document.querySelector('#id').value
-
     console.log('Editar registro ' + id)
 
     document.querySelector('#idPessoa').value = id
@@ -79,22 +80,4 @@ btnEditar.addEventListener('click', () => {
 
 ////// formulario formApagar
 
-// CONTROLES DA JANELA MODAL //
-function openModal(mensagem) {
-    document.querySelector('#modal').classList.add('active')
-    document.querySelector('#mensagemModal').innerHTML =
-    `
-        <h2>${mensagem}</h2>
-    `
-}
-
-function closeModal() {
-    document.querySelector('#modal').classList.remove('active')
-}
-
-// EVENTO para fechar janela modal
-document.querySelector('#modalClose').addEventListener('click', closeModal)
-
-// botao nao
-document.querySelector('#nao').addEventListener('click', closeModal)
-// CONTROLES DA JANELA MODAL //
+ModalHelper.fecharJanela()
