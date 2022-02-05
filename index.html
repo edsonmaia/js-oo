@@ -12,7 +12,20 @@
     <main class='tela-principal'>
         <section id='conteudos'>
             <h1>Calculadora de IMC</h1>
-            <form action='' method='post'>
+            <form action='' method='post' id='formulario'>
+
+                <div id='mensagem'></div>
+
+                <div class='form-group'>
+                    <label for="idPessoa">ID</label>
+                    <input 
+                        type="number"
+                        name="idPessoa"
+                        id="idPessoa"
+                        placeholder="ID"
+                        disabled
+                    />
+                </div>
 
                 <div class='form-group'>
                     <label for="nome">Nome <span class='detalhes'>*</span> </label>
@@ -63,10 +76,6 @@
                         />
                     <!-- 0.47 metros a 3 metros -->
                 </div>
-                    
-                <div class='form-group'>
-                    
-                </div>
 
                 <div class="form-group">
                     <button
@@ -78,6 +87,62 @@
                 </div>
 
             </form>
+
+            <!-- JANELA MODAL -->
+            <div class="modal" id="modal">
+                <div class="modal-content">
+                    <header class="modal-header">
+                        <h2>APAGAR REGISTRO</h2>
+                        <span class="modal-close" id="modalClose">&#10006;</span>
+                    </header>
+                    <div id='mensagemModal'>
+                    </div>
+                    <footer class="modal-footer">
+                        <button id="sim" class="btn btn-edit">Sim</button>
+                        <button id="nao" class="btn btn-del">Não</button>
+                    </footer>
+                </div>
+            </div>
+            <!-- FIM JANELA MODAL -->
+            
+            <!-- editar e apagar -->
+            <div class='formApagarEditar'>
+                <h2>Digite o id para Apagar ou Editar o registro</h2>
+                <form method='POST' id='formApagarEditar'>
+                    <div class='colunas2'>
+
+                        <div class="form-group">
+                            <button
+                                type="submit"
+                                id='btnApagar' class='btn btn-del'
+                                name='btnApagar'>
+                                Apagar
+                            </button>
+                        </div>
+
+                        <div class='form-group'>
+                            <input
+                                type="number"
+                                name="id"
+                                id="id"
+                                min='0' max='999' step='1'
+                                placeholder="ID"
+                                value=''
+                            />
+                        </div>
+    
+                        <div class="form-group">
+                            <button
+                                type="submit"
+                                id='btnEditar' class='btn btn-edit'
+                                name='btnEditar'>
+                                Editar
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
             <!-- view -->
             <div id='dados'>
                 <!-- tabela -->
@@ -85,6 +150,5 @@
         </section>
     </main>
     <script type="module" src="js/main.js"></script>
-
 </body>
 </html>

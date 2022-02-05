@@ -13,18 +13,19 @@ export class Pessoa {
 
     // método construtor
     constructor (nome, idade, peso, altura) {
+        
         this._nome = nome
         this._idade = idade
         this._peso = peso
         this._altura = altura
-        this._imc = (this.peso / (this.altura * this.altura)).toFixed(2) // set
+        this._imc = this.calculaImc()
         Pessoa.totalPessoas += 1 // contador com incremento
         this._classificacao = this.classificaImc()
     }
 
-    // get imc
+    // set imc
     calculaImc() {
-        return this.imc
+        return (this.peso / (this.altura * this.altura)).toFixed(2) // set
     }
 
     // classificar imc
@@ -69,6 +70,10 @@ export class Pessoa {
 
     get imc() {
         return this._imc
+    }
+
+    get classificacao() {
+        return this._classificacao
     }
 
     get totalPessoas() {
