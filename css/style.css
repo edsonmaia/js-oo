@@ -243,7 +243,7 @@ th, tr, td {
     display: flex;
     flex-direction: column;
     gap:20px;
-    width: 50vw;
+    width: 60vw;
     margin: 15vh auto;
     padding-bottom: 20px;
     background-color: white;
@@ -277,30 +277,6 @@ th, tr, td {
     color: white;
 }
 
-.modal-form{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 0 20px;
-}
-
-.modal-field{
-    width: calc(50% - 10px);
-    height: 40px;
-    outline-style: none;
-    border-style: none;
-    box-shadow: 0 0 2px black;
-    padding: 0 10px;
-    font-size:1rem;
-}
-
-.modal-field:focus{
-    border: 2px solid var(--primary-color);
-    box-shadow: 0 0 3px var(--primary-color);
-}
-
-
 .modal-footer{
     background-color: inherit;
     text-align: right;
@@ -316,12 +292,9 @@ th, tr, td {
         top:0;
     }
     .modal-content{
-        margin:0;
-        width:100%;
+        margin: 25% auto;
+        width: 95%;
         position:fixed;
-    }
-    .modal-field{
-        width:100%;
     }
 }
 
