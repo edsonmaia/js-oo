@@ -1,5 +1,6 @@
 import { PessoaController } from './api/controllers/PessoaController.js'
 import { ModalHelper } from './api/helpers/ModalHelper.js'
+import { Modal } from './api/models/Modal.js'
 
 const pessoaController = new PessoaController()
 
@@ -11,6 +12,9 @@ formulario.addEventListener('submit', (event) => {
     
     // adicionar pessoa
     pessoaController.adiciona(event)
+    
+    ModalHelper.ocultarBotoes()
+    ModalHelper.modal('Cadastro', 'Pessoa cadastrada ou atualizada!')
     
     // limpar formulario
     pessoaController._limpaFormulario()
@@ -35,8 +39,9 @@ btnApagar.addEventListener('click', () => {
     document.querySelector('#id').value = null
 
     ////// INTERACOES COM A JANELA MODAL //////
+    ModalHelper.mostrarBotoes()
     // abrir janela modal - titulo, mensagem
-    ModalHelper.openModal('Apagar registro', `Deseja apagar o registro ${id} ?`)
+    ModalHelper.modal('Apagar registro', `Deseja apagar o registro ${id} ?`)
 
     // se cliar no botao sim
     document.querySelector('#sim').addEventListener('click', () => {

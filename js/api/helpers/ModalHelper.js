@@ -1,11 +1,15 @@
 export class ModalHelper {
 
     // CONTROLES DA JANELA MODAL //
-    static openModal(titulo, mensagem) {
-        document.querySelector('#modal').classList.add('active')
-        document.querySelector('#titulo').innerHTML = `${titulo}`
+    static modal(titulo, texto) {
+        this.openModal()
+        document.querySelector('#titulo').innerHTML = titulo
         document.querySelector('#mensagemModal').innerHTML =
-        `<h2>${mensagem}</h2>`
+        `<p>${texto}</p>`
+    }
+
+    static openModal() {
+        document.querySelector('#modal').classList.add('active')
     }
 
     static closeModal() {
@@ -13,12 +17,19 @@ export class ModalHelper {
     }
 
     static fecharJanela() {
-        // EVENTO para fechar janela modal
         document.querySelector('#modalClose').addEventListener('click', this.closeModal)
-
-        // botao nao
         document.querySelector('#nao').addEventListener('click', this.closeModal)
-        // CONTROLES DA JANELA MODAL //
-    }
+   }
+
+   // metodos toggle para visibilidade
+   static ocultarBotoes() {
+        document.querySelector('#botoesModal').classList.remove('mostrar')
+        document.querySelector('#botoesModal').classList.add('ocultar')
+   }
+
+   static mostrarBotoes() {
+        document.querySelector('#botoesModal').classList.remove('ocultar')
+        document.querySelector('#botoesModal').classList.add('mostrar')
+   }
 
 }

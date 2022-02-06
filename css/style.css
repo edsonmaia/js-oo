@@ -326,8 +326,17 @@ th, tr, td {
 /* div da mensagem Modal */
 #mensagemModal {
     margin: 1rem;
+    text-align: center;
 }
 
 #sim {
     background: #2e7d32;
+}
+
+.ocultar {
+    display: none;
+}
+
+.mostrar {
+    display: block;
 }

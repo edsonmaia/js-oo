@@ -6,7 +6,7 @@ export class PessoasRepository {
     constructor() {
         this._getLocalStorage = () => JSON.parse(localStorage.getItem('db')) ?? []
         this._setLocalStorage = (db) => localStorage.setItem("db", JSON.stringify(db))
-        console.log('Local Storage')
+        //console.log('Local Storage')
     }
 
     // CRUD - create read update delete

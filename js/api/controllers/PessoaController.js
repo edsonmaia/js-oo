@@ -5,6 +5,9 @@ import { PessoasView } from '../views/PessoasView.js'
 import { Mensagem } from '../models/Mensagem.js'
 import { MensagemView } from '../views/MensagemView.js'
 
+import { Modal } from '../models/Modal.js'
+import { ModalView } from '../views/ModalView.js'
+
 import { PessoasRepository } from '../repositories/PessoasRepository.js'
 
 export class PessoaController {
@@ -27,7 +30,7 @@ export class PessoaController {
         ////////////////////////////////////////////////
         // Repositorio
         this._pessoasRepository = new PessoasRepository()
-        console.log(this._pessoasRepository)
+        //console.log(this._pessoasRepository)
         let lista = this._pessoasRepository.ler()
         console.log(lista)
         ////////////////////////////////////////////////
@@ -41,6 +44,11 @@ export class PessoaController {
         this._mensagem = new Mensagem()
         this._mensagemView = new MensagemView(document.querySelector('#mensagem'))
         this._mensagemView.update(this._mensagem)
+
+        // modal
+        this._modal = new Modal()
+        this._modalView = new ModalView(document.querySelector('#mensagemModal'))
+        this._modalView.update(this._modal)
 
     }
 
@@ -65,6 +73,12 @@ export class PessoaController {
             // definir e atualizar mensagem
             this._mensagem.texto = 'Pessoa cadastrada com sucesso!'
             this._mensagemView.update(this._mensagem)
+            
+            // modal
+            //this._modal.titulo = 'CADASTRO'
+            //this._modal.texto = 'Pessoa cadastrada!!!'
+            this._modalView.update(this._modal)
+
 
         } else {
             console.log('ID => ' + id)
