@@ -17,7 +17,7 @@
 }
 
 body {
-    min-width: 100%;
+    width: 100%;
     min-height: 100vh;
     background: radial-gradient(circle, #3f51b5, #1a237e);
     display: flex;
@@ -25,6 +25,7 @@ body {
 }
 
 main {
+    width: 100%;
     display: flex;
     flex-direction: row;
 
@@ -175,7 +176,7 @@ th, tr, td {
     text-align: center;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 640px) {
     section {
         width: 100%;
     }   
