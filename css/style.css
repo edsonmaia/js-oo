@@ -17,7 +17,7 @@
 }
 
 body {
-    min-width: 100%;
+    width: 100%;
     min-height: 100vh;
     background: radial-gradient(circle, #3f51b5, #1a237e);
     display: flex;
@@ -25,6 +25,7 @@ body {
 }
 
 main {
+    width: 100%;
     display: flex;
     flex-direction: row;
 
@@ -32,10 +33,11 @@ main {
 }
 
 section {
-    width: 800px;
+    /* max-width: 800px; */
+    width: 80%;
     background: #fff;
+    margin: 0 1rem;
     padding: 0 1.5rem;
-    /* border-radius: 8px; */
     box-shadow: 0 0 3px #fff;
 }
 
@@ -155,7 +157,8 @@ input::placeholder:focus {
 }
 
 #dados {
-    margin: 1rem;
+    margin: 1rem 0;
+    overflow-x: auto;
 }
 
 table {
@@ -175,7 +178,7 @@ th, tr, td {
     text-align: center;
 }
 
-@media (max-width: 800px) {
+@media (max-width:480px) {
     section {
         width: 100%;
     }   
