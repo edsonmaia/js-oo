@@ -2,8 +2,8 @@ import { Pessoa } from '../models/Pessoa.js'
 import { ListaPessoas } from '../models/ListaPessoas.js'
 import { PessoasView } from '../views/PessoasView.js'
 
-import { Mensagem } from '../models/Mensagem.js'
-import { MensagemView } from '../views/MensagemView.js'
+// import { Mensagem } from '../models/Mensagem.js'
+// import { MensagemView } from '../views/MensagemView.js'
 
 import { Modal } from '../models/Modal.js'
 import { ModalView } from '../views/ModalView.js'
@@ -41,9 +41,9 @@ export class PessoaController {
         this._pessoasView.update(this._listaPessoas)
       
         // mensagem
-        this._mensagem = new Mensagem()
-        this._mensagemView = new MensagemView(document.querySelector('#mensagem'))
-        this._mensagemView.update(this._mensagem)
+        //this._mensagem = new Mensagem()
+        // this._mensagemView = new MensagemView(document.querySelector('#mensagem'))
+        // this._mensagemView.update(this._mensagem)
 
         // modal
         this._modal = new Modal()
@@ -71,12 +71,10 @@ export class PessoaController {
             this._pessoasView.update(this._listaPessoas)
 
             // definir e atualizar mensagem
-            this._mensagem.texto = 'Pessoa cadastrada com sucesso!'
-            this._mensagemView.update(this._mensagem)
+            // this._mensagem.texto = 'Pessoa cadastrada com sucesso!'
+            // this._mensagemView.update(this._mensagem)
             
             // modal
-            //this._modal.titulo = 'CADASTRO'
-            //this._modal.texto = 'Pessoa cadastrada!!!'
             this._modalView.update(this._modal)
 
 

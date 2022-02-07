@@ -1,6 +1,5 @@
 import { PessoaController } from './api/controllers/PessoaController.js'
 import { ModalHelper } from './api/helpers/ModalHelper.js'
-import { Modal } from './api/models/Modal.js'
 
 const pessoaController = new PessoaController()
 
